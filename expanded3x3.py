@@ -31,12 +31,10 @@ class move():
 while True:
     for i in range(get_world_size()):
         for i in range(get_world_size()):
-            harvest()
-            till()
-            plant(Entities.Carrot)
-            move(move.East)
+            plant(Entities.Bush)
             if can_harvest():
                 harvest()
             else:
-                do_a_flip()
-                move(move.North)
+                break
+        move(move.North)
+    move(move.East)
