@@ -1,6 +1,9 @@
 def harvest():
     print('harvest')
 
+def clear():
+    clear = 'clear'
+
 def do_a_flip():
     do_a_flip = 'flip'
 
@@ -18,9 +21,6 @@ def move():
 
 def till():
     till = 'till'
-def clear():
-    clear = 'clear'
-    
 class Entities():
     Grass = 'grass'
     Bush = 'bush'
@@ -35,10 +35,11 @@ clear()
 while True:
 	for i in range(3):
 		for j in range(3):
-			plant(Entities.Bush)
 			if can_harvest():
 				harvest()
+				till()
+				plant(Entities.Carrot)
+				move(move.North)
 			else:
 				do_a_flip()
-			move(move.North)
-		move(move.East)
+				move(move.East)
